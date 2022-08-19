@@ -2,5 +2,7 @@
 <%= link_to 'Create a New Article', '/articles/new', class: 'new-article' %>
 
 <% @articles.each do |article| %>
-  <li><%= link_to article.title, "/articles/#{article.id}", class: 'article-title' %></li>
+  <div class= "article-<%= article.id %>" >
+    <li><%= link_to article.title, "/articles/#{article.id}" %></li>
+  </div>
 <% end %>
