@@ -23,8 +23,8 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    article = @article.update(article_params)
-    flash[:success] = "#{article.title} has been updated!"
+    @article.update(article_params)
+    flash[:success] = "#{@article.title} has been updated!"
 
     redirect_to article_path(@article)
   end

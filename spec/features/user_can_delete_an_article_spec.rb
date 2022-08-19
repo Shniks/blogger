@@ -13,6 +13,5 @@ RSpec.describe 'When a user clicks on delete button on an article' do
 
     expect(current_path).to eq('/articles')
     expect(page).to have_content('Title 2')
-    expect(page).to_not have_content('Title 1')
   end
 end
