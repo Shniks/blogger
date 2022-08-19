@@ -9,7 +9,7 @@ RSpec.describe 'When a user clicks on edit next to an article in articles index'
       visit '/articles'
 
       within ".article-#{article_1.id}" do
-        click_button 'Edit'
+        click_link 'Edit'
       end
 
       expect(current_path).to eq('/articles/1/edit')
