@@ -1,21 +1,23 @@
-require "rails_helper"
+require 'rails_helper'
 
-describe "user creates a new article" do
-  describe "they link from the articles index" do
-    describe "they fill in a title and body" do
-      it "creates a new article" do
-        visit articles_path
-        click_link "Create a New Article"
+RSpec.describe 'When a user clicks on create new article in articles index' do
+  describe 'they fill in a form and click create article' do
+    it 'creates new article' do
 
-        expect(current_path).to eq(new_article_path)
+      visit '/articles'
 
-        fill_in "article[title]", with: "New Title!"
-        fill_in "article[body]",  with: "New Body!"
-        click_on "Create Article"
+      click_link 'Create a New Article'
 
-        expect(page).to have_content("New Title!")
-        expect(page).to have_content("New Body!")
-      end
+      expect(current_path).to eq('/articles/new')
+
+      fill_in :title, with: 'New Title'
+      fill_in :body, with: 'New Body'
+
+      click_on 'Create Article'
+
+      expect(current_path).to eq('/articles/1')
+      expect(page).to have_content('New Title')
+      expect(page).to have_content('New Body')
     end
   end
 end
