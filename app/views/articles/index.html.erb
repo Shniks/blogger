@@ -1,8 +1,9 @@
 <h1>List of Articles</h1>
-<%= link_to 'Create a New Article', '/articles/new', class: 'new-article' %>
+<%= link_to 'Create a New Article', '/articles/new' %>
 
 <% @articles.each do |article| %>
   <div class= "article-<%= article.id %>" >
     <li><%= link_to article.title, "/articles/#{article.id}" %></li>
+    <%= button_to 'Delete', "/articles/#{article.id}", method: :delete %>
   </div>
 <% end %>
