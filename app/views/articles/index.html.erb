@@ -4,6 +4,6 @@
 <% @articles.each do |article| %>
   <div class= "article-<%= article.id %>" >
     <li><%= link_to article.title, "/articles/#{article.id}" %></li>
-    <%= button_to 'Delete', "/articles/#{article.id}", method: :delete %>
+    <%= button_to 'Delete', "/articles/#{article.id}", method: :delete, data: {confirm: "Really delete the article?"} %>
   </div>
 <% end %>
