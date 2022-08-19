@@ -9,7 +9,5 @@ RSpec.describe 'When a user visits the articles index page' do
 
     expect(page).to have_content(article_1.title)
     expect(page).to have_content(article_2.title)
-    expect(page).to have_content(article_1.body)
-    expect(page).to have_content(article_2.body)
   end
-end 
+end
