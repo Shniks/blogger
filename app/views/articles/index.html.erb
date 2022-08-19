@@ -1,5 +1,5 @@
 <h1>List of Articles</h1>
 
 <% @articles.each do |article| %>
-  <li><%= article.title %></li>
+  <li><%= link_to article.title, "/articles/#{article.id}", class: 'article-title' %></li>
 <% end %>
