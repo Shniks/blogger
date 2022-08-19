@@ -18,6 +18,10 @@ RSpec.describe 'When a user visits the articles index' do
       expect(page).to have_content(article_1.title)
       expect(page).to have_content(article_1.body)
       expect(page).to_not have_content(article_2.title)
+      expect(page).to have_content(comment_1.author_name)
+      expect(page).to have_content(comment_2.author_name)
+      expect(page).to have_content(comment_1.body)
+      expect(page).to have_content(comment_2.body)
 
       visit articles_path
 
@@ -29,10 +33,6 @@ RSpec.describe 'When a user visits the articles index' do
       expect(page).to have_content(article_2.title)
       expect(page).to have_content(article_2.body)
       expect(page).to_not have_content(article_1.title)
-      expect(page).to have_content(comment_1.author_name)
-      expect(page).to have_content(comment_2.author_name)
-      expect(page).to have_content(comment_1.body)
-      expect(page).to have_content(comment_2.body)
     end
   end
 end
