@@ -35,4 +35,22 @@ RSpec.describe 'When a user visits the articles index' do
       expect(page).to_not have_content(article_1.title)
     end
   end
+
+  describe 'they fill in a comment form' do
+    it 'displays the comment in the article show' do
+      article = Article.create!(title: "New Title", body: "New Body")
+
+      visit article_path(article)
+
+      fill_in "comment[author_name]", with: 'Lady Gaga'
+      fill_in "comment[body]", with: 'So many thoughts about this article.'
+
+      click_on 'Submit'
+
+      expect(current_path).to eq(article_path(article))
+      expect(page).to have_content('Post a Comment')
+      expect(page).to have_content('Lady Gaga')
+      expect(page).to have_content('So many thoughts about this article.')
+    end
+  end
 end
