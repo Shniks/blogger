@@ -1,24 +1,40 @@
-# README
+---
+Project Title: Blogger
+Author: Nikhil Shahi
+Date: August 19, 2022
+Test Framework: RSpec
+Test Coverage: 100%
+---
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Overview
+========
 
-Things you may want to cover:
+In this project we’ll create a simple blog system while applying the basics of Ruby on Rails including:
 
-* Ruby version
+- Models, Views, and Controllers (MVC)
+- Data Structures & Relationships (One to Many, Many to Many)
+- Routing
+- Migrations
+- Views with forms, partials, and helpers
+- RESTful design
 
-* System dependencies
+The app will have:
 
-* Configuration
+- An articles index
+- Articles show page
+- Comments capability for each article
+- Tags for each article
 
-* Database creation
 
-* Database initialization
+## Articles Resource
 
-* How to run the test suite
+Create full CRUD operations for the articles resource
 
-* Services (job queues, cache servers, search engines, etc.)
+## Comments Resource
 
-* Deployment instructions
+- Establish relationship between article and Comments
+- Allow comments to be added on the article show page
 
-* ...
+## Tags Resource
+
+Allow tags to be created for articles for organization and navigation

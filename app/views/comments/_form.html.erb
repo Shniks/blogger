@@ -1,9 +1,9 @@
 <h3>Post a Comment:</h3>
 
 <%= form_for [ @article, @comment ] do |f| %>
-  <%= f.label :author_name %>
+  <%= f.label :author_name, 'Your Name' %>
   <%= f.text_field :author_name %>
-  <%= f.label :body %>
+  <%= f.label :body, 'Your Comment' %>
   <%= f.text_area :body %>
   <%= f.submit 'Submit' %>
 <% end %>
