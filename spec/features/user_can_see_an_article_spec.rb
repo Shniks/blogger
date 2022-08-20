@@ -42,8 +42,8 @@ RSpec.describe 'When a user visits the articles index' do
 
       visit article_path(article)
 
-      fill_in :author_name, with: 'Lady Gaga'
-      fill_in :body, with: 'So many thoughts about this article.'
+      fill_in "comment[author_name]", with: 'Lady Gaga'
+      fill_in "comment[body]", with: 'So many thoughts about this article.'
 
       click_on 'Submit'
 
@@ -52,5 +52,5 @@ RSpec.describe 'When a user visits the articles index' do
       expect(page).to have_content('Lady Gaga')
       expect(page).to have_content('So many thoughts about this article.')
     end
-  end 
+  end
 end
