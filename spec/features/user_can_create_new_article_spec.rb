@@ -12,12 +12,14 @@ RSpec.describe 'When a user clicks on create new article in articles index' do
 
       fill_in :title, with: 'New Title'
       fill_in :body, with: 'New Body'
+      fill_in :tag_list, with: "ruby, technology"
 
       click_on 'Create Article'
 
       expect(current_path).to eq('/articles/1')
       expect(page).to have_content('New Title')
       expect(page).to have_content('New Body')
+      expect(page).to have_content('ruby technology')
     end
   end
 end
