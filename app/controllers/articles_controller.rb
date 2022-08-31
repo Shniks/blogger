@@ -1,5 +1,5 @@
 class ArticlesController < ApplicationController
-  before_action :set_article, only: [:show, :update]
+  before_action :set_article, only: [:show, :update, :edit]
 
   def index
     @articles = Article.all
@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
 
   def show
     @comment = Comment.new
-    @comment.article_id = @article.id 
+    @comment.article_id = @article.id
   end
 
   def new
@@ -21,7 +21,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
